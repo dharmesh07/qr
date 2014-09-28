@@ -23,6 +23,7 @@
     <script src="js/app.js"></script>
     <script src="js/controller.js"></script>
     <script src="js/router.js"></script>
+    <script src="js/service.js"></script>
     
     
   </head>
@@ -89,16 +90,25 @@
                       <div class="input-label">
                         Participant Type
                       </div>
-                      <select ng-model="participant_type" name="participant_type" id="participant_type">
+                      <select ng-model="participant_type" id="participant_type">
                         <option selected>Individual</option>
                         <option>Team</option>
                       </select>
                     </label>
                 </div>
                 <div class="list row responsive-sm ">
-                  <button ng-click="adduser()" class="button icon-right ion-chevron-right button-calm">NEXT</a>
+                  <a href="#/users" ng-click="add()" class="button icon-right ion-chevron-right button-calm">Next</a>
                 </div>
     </script>
+
+
+        <script type="text/ng-template" id="/users.html" >
+        <div ng-repeat="user in users">
+              {{user.event_type}}
+        </div>
+
+
+        </script>
 
 
 

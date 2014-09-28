@@ -11,5 +11,14 @@ function($stateProvider, $urlRouterProvider) {
       controller: 'Homecontrol'
     });
 
+
+
+    $stateProvider
+  .state('users', {
+  url: '/users',
+  templateUrl: '/users.html',
+  controller: 'Usercontrol'
+});
+
   $urlRouterProvider.otherwise('home');
 }])
