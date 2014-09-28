@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Kurukshetra</title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="kurukshetra" ng-controller="k-control">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <img src="img/klogo.png" width="70%" height="100%">
+      </ion-header-bar>
+      <ion-content>
+          <div class="list row responsive-sm event-type">
+                <label class="item item-input item-select">
+                  <div class="input-label">
+                    Event Category
+                  </div>
+                  <select ng-model="user.event-type" name="event-type" id="event-type">
+                    <option>Online</option>
+                    <option selected>Engineering</option>
+                    <option>Coding</option>
+                    <option>General</option>
+                    <option>Management</option>
+                    <option>Robotics</option>
+                    <option>Quizzes</option>
+                  </select>
+                </label>
+            </div>
+            <div class="list row responsive-sm event-name">
+              <label class="item item-input item-select">
+                  <div class="input-label">
+                    Event Name
+                  </div>
+                  <select ng-model="user.event-name" name="event-name" id="event-name">
+                    <option>Aero modelling</option>
+                    <option selected>Contraptions</option>
+                    <option>God Speed</option>
+                    <option>Mega Structures</option>
+                    <option>Electro Warriors</option>
+                    <option>Paper Presentation</option>
+                    <option>Leyland Innovate</option>
+                  </select>
+                </label>
+            </div>
+            <div class="list row responsive-sm event-name">
+              <label class="item item-input item-select">
+                  <div class="input-label">
+                    Round
+                  </div>
+                  <select ng-model="user.round" name="round" id="round">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option selected>Winner</option>
+                    
+                  </select>
+                </label>
+            </div>
+            <div class="list row responsive-sm event-name">
+              <label class="item item-input item-select">
+                  <div class="input-label">
+                    Participant Type
+                  </div>
+                  <select ng-model="user.participant-type" name="participant-type" id="participant-type">
+                    <option selected>Individual</option>
+                    <option>Team</option>
+                  </select>
+                </label>
+            </div>
+            <div class="list row responsive-sm event-name">
+              <button ng-click="page2()" class="button icon-right ion-chevron-right button-calm">NEXT</a>
+            </div>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
