@@ -1,8 +1,5 @@
 angular.module('kurukshetra')
-.factory('users', [function(){
-	var o = {
-	    users: []
-	  };
-  return o;
+.factory('user', [function(){
+	return { event_type :"" , event_name : "" , round : "" , participant_type : "" ,qr : ""};
 
 }])

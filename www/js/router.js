@@ -13,7 +13,7 @@ function($stateProvider, $urlRouterProvider) {
 
 
 
-    $stateProvider
+  $stateProvider
   .state('users', {
   url: '/users',
   templateUrl: '/users.html',
