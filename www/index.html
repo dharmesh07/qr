@@ -55,7 +55,7 @@
                       </select>
                     </label>
                 </div>
-                {{user.event_type}}
+                
                 <div class="list row responsive-sm ">
                   <label class="item item-input item-select">
                       <div class="input-label">
@@ -72,7 +72,7 @@
                       </select>
                     </label>
                 </div>
-                {{user.event_name}}
+                
                 <div class="list row responsive-sm ">
                   <label class="item item-input item-select">
                       <div class="input-label">
@@ -87,7 +87,20 @@
                       </select>
                     </label>
                 </div>
-                {{user.round}}
+                <div class="list row responsive-sm ">
+                  <label class="item item-input item-select">
+                      <div class="input-label">
+                        Place
+                      </div>
+                      <select ng-model="user.place" id="place">
+                        <option selected>Next Round</option>
+                        <option>First</option>
+                        <option>Second</option>
+                        <option>Third</option>
+                      </select>
+                    </label>
+                </div>
+             
                 <div class="list row responsive-sm ">
                   <label class="item item-input item-select">
                       <div class="input-label">
@@ -99,14 +112,24 @@
                       </select>
                     </label>
                 </div>
-                {{user.participant_type}}
+
+                
                 <div class="list row responsive-sm ">
-                  <a href="#/users" ng-click="add()" class="button icon-right ion-chevron-right button-calm">Next</a>
+                  <a href="#/users" class="button icon-right ion-chevron-right button-calm">Next</a>
                 </div>
     </script>
 
 
         <script type="text/ng-template" id="/users.html" >
+        <div class="row">
+            <div class="col col-50">
+                  <div class="input-label">
+                        Participant 1
+                      </div>
+             </div>
+            <div class="col"><input type="text" ng-model="user.qr"></div>
+            <div class="col"><button class="button icon ion-gear-a" ng-click="startscan()"></button></div>
+        </div>
                 
         </script>
 

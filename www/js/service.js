@@ -1,5 +1,10 @@
 angular.module('kurukshetra')
 .factory('user', [function(){
-	return { event_type :"" , event_name : "" , round : "" , participant_type : "" ,qr : ""};
+	var winners = [];
+	return { event_type :"" , event_name : "" , round : "" ,place : "" , participant_type : "" ,qr : "" , 
+	
+			addwinner : function(index){
+				winners[index] = {event_type : event_type , event_name : event_name , round : round ,place : place , participant_type : participant_type ,qr : qr}
+			}};
 
 }])
