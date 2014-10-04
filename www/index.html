@@ -28,17 +28,15 @@
     
   </head>
   <body ng-app="kurukshetra" >
-
-    <ion-pane>
-      <ion-header-bar class="bar bar-header bar-assertive bar-stable">
-        <img src="img/klogo.png" width="100%" height="100%">
-      </ion-header-bar>
-      <ion-content>
-            <ui-view></ui-view>
-      </ion-content>
-    </ion-pane>
+    <ion-nav-bar class="nav-title-slide-ios7 bar-positive">
+      <ion-nav-back-button class="button-icon ion-arrow-left-c">
+      </ion-nav-back-button>
+    </ion-nav-bar>       
+    <ion-nav-view animation="slide-left-right"></ion-nav-view>
 
     <script type="text/ng-template" id="/home.html" >
+    <ion-view title="Home">
+    <ion-content class="padding">
     <div class="list row responsive-sm ">
                     <div class="item item-input item-select ">
                       <div class="input-label">
@@ -113,45 +111,110 @@
                     </div>
                 </div>              
                 <div class="list row responsive-sm ">
-                  <a href="#/users" class=" button icon-right ion-chevron-right button-calm">Next</a>
+                  <a ng-click="nextpage()" class=" button icon-right ion-chevron-right button-calm">Next</a>
                 </div>
+                </ion-view>
+                </ion-content>
     </script>
 
 
         <script type="text/ng-template" id="/users.html" >
+        <ion-view title="Participants of Team">
+        <ion-content class="padding">
         <div class="row">
-            <div class="col">User 1</div>
-            <div class="col"><input type="text" ng-model="user.qr1"></div>
-            <div class="col"><button class="button icon ion-gear-a" ng-click="startscan1()">
-            </button></div>
+          <div class="item item-input">
+            <div class="input-label">
+              Team Name
+            </div>
+            <input type="text" ng-model="user.teamname">
+          </div>
         </div>
-        <div class="row">
-            <div class="col">User 2</div>
-            <div class="col"><input type="text" ng-model="user.qr2"></div>
-            <div class="col"><button class="button icon ion-gear-a" ng-click="startscan2()">
-            </button></div>
+        <div class="list list-inset">
+            <div class="item item-input-inset item-input-inset">
+                <div class="col">User 1</div>
+                <div class="col"><input type="text" ng-model="user.qr1"></div>
+                <div class="col"><button class="button icon ion-gear-a" ng-click="startscan1()">
+                </button></div>
+            </div>
+            <div class="item item-input-inset item-input-inset">
+                <div class="col">User 2</div>
+                <div class="col"><input type="text" ng-model="user.qr2"></div>
+                <div class="col"><button class="button icon ion-gear-a" ng-click="startscan2()">
+                </button></div>
+            </div>
+            <div class="item item-input-inset item-input-inset">
+                <div class="col">User 3</div>
+                <div class="col"><input type="text" ng-model="user.qr3"></div>
+                <div class="col"><button class="button icon ion-gear-a" ng-click="startscan3()">
+                </button></div>
+            </div>
+            <div class="item item-input-inset item-input-inset">
+                <div class="col">User 4</div>
+                <div class="col"><input type="text" ng-model="user.qr4"></div>
+                <div class="col"><button class="button icon ion-gear-a" ng-click="startscan4()">
+                </button></div>
+            </div>
+            <div class="item item-input-inset item-input-inset">
+                <div class="col">User 5</div>
+                <div class="col"><input type="text" ng-model="user.qr5"></div>
+                <div class="col"><button class="button icon ion-gear-a" ng-click="startscan5()">
+                </button></div>
+            </div>
         </div>
-        <div class="row">
-            <div class="col">User 3</div>
-            <div class="col"><input type="text" ng-model="user.qr3"></div>
-            <div class="col"><button class="button icon ion-gear-a" ng-click="startscan3()">
-            </button></div>
-        </div>
-        <div class="row">
-            <div class="col">User 4</div>
-            <div class="col"><input type="text" ng-model="user.qr4"></div>
-            <div class="col"><button class="button icon ion-gear-a" ng-click="startscan4()">
-            </button></div>
-        </div>
-        <div class="row">
-            <div class="col">User 5</div>
-            <div class="col"><input type="text" ng-model="user.qr5"></div>
-            <div class="col"><button class="button icon ion-gear-a" ng-click="startscan5()">
-            </button></div>
-        </div>
-
-                
+        <div class="list row responsive-sm ">
+                  <a href="#/confirm" class=" button icon-right ion-chevron-right button-calm">Next</a>
+                </div>
+        </ion-view>
+        </ion-content>
         </script>
+
+
+     <script type="text/ng-template" id="/user.html" >
+        <ion-view title="Participant/Winner">
+        <ion-content class="padding">
+        <div class="list list-inset">
+            <div class="item item-input-inset item-input-inset">
+                <div class="col">Participant</div>
+                <div class="col"><input type="text" ng-model="user.qr1"></div>
+                <div class="col"><button class="button icon ion-gear-a" ng-click="startscan1()">
+                </button></div>
+            </div>
+        </div>
+        <div class="list row responsive-sm ">
+                  <a href="#/confirm" class=" button icon-right ion-chevron-right button-calm">Next</a>
+                </div>
+        </ion-view>
+        </ion-content>
+        </script>
+
+
+
+
+        <script type="text/ng-template" id="/confirm.html" >
+        <ion-view title="Participants of Team">
+        <ion-content class="padding">
+
+        {{user.event_type}}<br>
+        {{user.event_name}}<br>
+        {{user.round}}<br>
+        {{user.place}}<br>
+        {{user.participant_type}}<br>
+        {{user.teamname}}<br>
+        {{user.qr1}}<br>
+        {{user.qr2}}<br>
+        {{user.qr3}}<br>
+        {{user.qr4}}<br>
+        {{user.qr5}}<br>
+
+
+        <div class="list row responsive-sm ">
+                  <a href="#/insert" class=" button icon-right ion-chevron-right button-calm">Send</a>
+                </div>
+        </ion-view>
+        </ion-content>
+        </script> 
+
+
 
 
 

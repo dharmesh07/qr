@@ -3,9 +3,16 @@ angular.module('kurukshetra')
 .controller('Homecontrol',
 function($scope, user){
      $scope.user = user;
+     $scope.nextpage = function(){
+     	if(user.participant_type == "Individual")
+     		location.href = "#/user";
+     	else
+     		location.href = "#/users";
+
+     }
 })
 
-.controller('Usercontrol',
+.controller('Userscontrol',
 function($scope, user){
 	$scope.user = user;
 	$scope.startscan1 = function() {
@@ -65,6 +72,32 @@ function($scope, user){
 	}
 
 })
+
+
+
+.controller('Usercontrol',
+function($scope, user){
+	$scope.user = user;
+	$scope.startscan1 = function() {
+	cordova.plugins.barcodeScanner.scan(
+		function (result) {
+			$scope.$apply(function(){
+					user.qr1 = result.text ;
+					})
+		}, 
+		function (error) {
+			alert("Scanning failed: " + error);
+		});
+	}
+
+})
+
+
+.controller('confirmcontrol',
+function($scope, user){
+	$scope.user = user;
+})
+
 
 
 

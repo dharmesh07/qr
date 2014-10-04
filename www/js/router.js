@@ -17,8 +17,22 @@ function($stateProvider, $urlRouterProvider) {
   .state('users', {
   url: '/users',
   templateUrl: '/users.html',
+  controller: 'Userscontrol'
+  });
+
+  $stateProvider
+  .state('user', {
+  url: '/user',
+  templateUrl: '/user.html',
   controller: 'Usercontrol'
-});
+  });
+
+  $stateProvider
+  .state('confirm', {
+  url: '/confirm',
+  templateUrl: '/confirm.html',
+  controller: 'confirmcontrol'
+  });
 
   $urlRouterProvider.otherwise('home');
 }])
