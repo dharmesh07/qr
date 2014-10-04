@@ -11,7 +11,11 @@ function($scope, user){
 	$scope.startscan = function() {
 	cordova.plugins.barcodeScanner.scan(
 		function (result) {
-			user.qr = result.text ;
+			$scope.$apply(function(){
+					user.qr = result.text ;
+					}
+				)
+			
 		}, 
 		function (error) {
 			alert("Scanning failed: " + error);
