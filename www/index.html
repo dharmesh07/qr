@@ -30,11 +30,11 @@
   <body ng-app="kurukshetra" >
 
     <ion-pane>
-      <ion-header-bar class="bar-stable">
+      <ion-header-bar class="bar bar-header bar-assertive bar-stable">
         <img src="img/klogo.png" width="100%" height="100%">
       </ion-header-bar>
       <ion-content>
-          <ui-view></ui-view>
+            <ui-view></ui-view>
       </ion-content>
     </ion-pane>
 
@@ -111,33 +111,45 @@
                         <option>Team</option>
                       </select>
                     </div>
-                </div>
+                </div>              
                 <div class="list row responsive-sm ">
-                  <div class="item item-input item-select">
-                      <div class="input-label">
-                        No. of Participant
-                      </div>
-                      <input type="number" ng-model="user.count">
-                    </div>
-                </div>
-
-                
-                <div class="list row responsive-sm ">
-                  <a href="#/users" class="button icon-right ion-chevron-right button-calm">Next</a>
+                  <a href="#/users" class=" button icon-right ion-chevron-right button-calm">Next</a>
                 </div>
     </script>
 
 
         <script type="text/ng-template" id="/users.html" >
         <div class="row">
-            <div class="col col-50">
-                  <div class="input-label">
-                        User 1
-                      </div>
-             </div>
-            <div class="col"><input type="text" ng-model="user.qr"></div>
-            <div class="col"><button class="button icon ion-gear-a" ng-click="startscan()"></button></div>
+            <div class="col">User 1</div>
+            <div class="col"><input type="text" ng-model="user.qr1"></div>
+            <div class="col"><button class="button icon ion-gear-a" ng-click="startscan1()">
+            </button></div>
         </div>
+        <div class="row">
+            <div class="col">User 2</div>
+            <div class="col"><input type="text" ng-model="user.qr2"></div>
+            <div class="col"><button class="button icon ion-gear-a" ng-click="startscan2()">
+            </button></div>
+        </div>
+        <div class="row">
+            <div class="col">User 3</div>
+            <div class="col"><input type="text" ng-model="user.qr3"></div>
+            <div class="col"><button class="button icon ion-gear-a" ng-click="startscan3()">
+            </button></div>
+        </div>
+        <div class="row">
+            <div class="col">User 4</div>
+            <div class="col"><input type="text" ng-model="user.qr4"></div>
+            <div class="col"><button class="button icon ion-gear-a" ng-click="startscan4()">
+            </button></div>
+        </div>
+        <div class="row">
+            <div class="col">User 5</div>
+            <div class="col"><input type="text" ng-model="user.qr5"></div>
+            <div class="col"><button class="button icon ion-gear-a" ng-click="startscan5()">
+            </button></div>
+        </div>
+
                 
         </script>
 

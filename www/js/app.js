@@ -17,7 +17,18 @@ angular.module('kurukshetra', ['ionic','ui.router'])
       StatusBar.styleDefault();
     }
   });
+  $ionicPlatform.onHardwareBackButton(function (event) {
+    if($state.current.name=="app.home"){
+      navigator.app.exitApp();
+    }
+    else {
+      navigator.app.backHistory();
+    }
+  }, 10);
+
 })
+
+
 
 
 
