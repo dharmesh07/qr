@@ -96,6 +96,13 @@ function($scope, user){
 .controller('confirmcontrol',
 function($scope, user){
 	$scope.user = user;
+	$scope.check = function(){
+		if($scope.password)
+			alert("pass");
+		else   
+			alert("fail");
+		}
+	
 })
 
 

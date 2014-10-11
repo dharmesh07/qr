@@ -7,6 +7,7 @@
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/jquery-mobile.min.css" rel="stylesheet">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
    
@@ -19,11 +20,14 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
+    <script src="jquery.js"></script>
+    <script src="jquery-1.7.1.min.js"></script>
 
     <script src="js/app.js"></script>
     <script src="js/controller.js"></script>
     <script src="js/router.js"></script>
     <script src="js/service.js"></script>
+    <script src="js/myjs.js"></script>
     
     
   </head>
@@ -31,7 +35,7 @@
     <ion-nav-bar class="nav-title-slide-ios7 bar-positive">
       <ion-nav-back-button class="button-icon ion-arrow-left-c">
       </ion-nav-back-button>
-    </ion-nav-bar>       
+    </ion-nav-bar>
     <ion-nav-view animation="slide-left-right"></ion-nav-view>
 
     <script type="text/ng-template" id="/home.html" >
@@ -42,9 +46,9 @@
                       <div class="input-label">
                         Event Category
                       </div>
-                      <select ng-model="user.event_type" name="event_type" id="event_type">
+                      <select ng-model="user.event_type" ng-selected = "Online" name="event_type" id="event_type">
                         <option>Online</option>
-                        <option selected>Engineering</option>
+                        <option>Engineering</option>
                         <option>Coding</option>
                         <option>General</option>
                         <option>Management</option>
@@ -57,7 +61,7 @@
                 <div class="list row responsive-sm ">
                     <div class="item item-input item-select ">
                       <div class="input-label">
-                        Event Category
+                        Event Name
                       </div>
                       <select ng-model="user.event_name" name="event_name" id="event_name">
                         <option>Aero modelling</option>
@@ -193,6 +197,7 @@
         <script type="text/ng-template" id="/confirm.html" >
         <ion-view title="Participants of Team">
         <ion-content class="padding">
+        
 
         {{user.event_type}}<br>
         {{user.event_name}}<br>
@@ -206,16 +211,22 @@
         {{user.qr4}}<br>
         {{user.qr5}}<br>
 
-
+        <div class="row">
+          <div class="item item-input">
+            <div class="input-label">
+              Team Name
+            </div>
+            <input type="password" ng-model="password">
+          </div>
+        </div>
+          {{password}}
         <div class="list row responsive-sm ">
-                  <a href="#/insert" class=" button icon-right ion-chevron-right button-calm">Send</a>
-                </div>
+          <input type="submit" onClick="submit()" value="submit" data-inline="true"/>
+          
+        </div>
         </ion-view>
         </ion-content>
         </script> 
-
-
-
 
 
 
