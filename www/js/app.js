@@ -16,6 +16,7 @@ angular.module('kurukshetra', ['ionic','ui.router'])
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+    
   });
   $ionicPlatform.onHardwareBackButton(function (event) {
     if($state.current.name=="app.home"){

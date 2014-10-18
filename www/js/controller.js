@@ -94,12 +94,14 @@ function($scope, user){
 
 
 .controller('confirmcontrol',
-function($scope, user ,$ionicLoading,$location){
+function($scope, user ,$ionicLoading,$location,$timeout){
 	$scope.user = user;
 	$scope.insert = function(){
-		$ionicLoading.show({
-      template: 'Loading...'
-    });
+		$ionicLoading.show({template: 'Loading...'});
+		$timeout(function () {
+			    $ionicLoading.hide();
+			    alert("could not establish network connection");
+	  		}, 10000);
     var postData ={
         "event_type" : document.getElementById('test_event_type').value,
         "event_name" : document.getElementById('test_event_name').value,
