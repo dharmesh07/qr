@@ -94,14 +94,46 @@ function($scope, user){
 
 
 .controller('confirmcontrol',
-function($scope, user){
+function($scope, user ,$ionicLoading,$location){
 	$scope.user = user;
-	$scope.check = function(){
-		if($scope.password)
-			alert("pass");
-		else   
-			alert("fail");
-		}
+	$scope.insert = function(){
+		$ionicLoading.show({
+      template: 'Loading...'
+    });
+    var postData ={
+        "event_type" : document.getElementById('test_event_type').value,
+        "event_name" : document.getElementById('test_event_name').value,
+        "round" : document.getElementById('test_round').value,
+        "place" : document.getElementById('test_place').value,
+        "participant_type" : document.getElementById('test_participant_type').value,
+        "teamname" : document.getElementById('test_teamname').value,
+        "qr1" : document.getElementById('test_qr1').value,
+        "qr2" : document.getElementById('test_qr2').value,
+        "qr3" : document.getElementById('test_qr3').value,
+        "qr4" : document.getElementById('test_qr4').value,
+        "qr5" : document.getElementById('test_qr5').value,
+    }
+    console.log(postData);
+    $.ajax({
+        type: 'GET',
+        data: postData,
+        jsonp: "callback",
+        dataType: 'jsonp',
+        url: 'http://www.techteam.kurukshetra.org.in/qr.php',
+        success: function(data){
+        	$ionicLoading.hide();
+            alert('Your comment was successfully added');
+            $location.path('/home');
+        },
+        error: function(data,error){
+            $ionicLoading.hide();
+            console.log(error);
+            alert('There was an error adding your comment');
+        }
+    });
+    
+    return false;
+};
 	
 })
 
