@@ -11,8 +11,6 @@ function($stateProvider, $urlRouterProvider) {
       controller: 'Homecontrol'
     });
 
-
-
   $stateProvider
   .state('users', {
   url: '/users',

@@ -20,15 +20,14 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
-    <script src="jquery.js"></script>
-    <script src="jquery-1.7.1.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-1.7.1.min.js"></script>
 
 
     <script src="js/app.js"></script>
     <script src="js/controller.js"></script>
     <script src="js/router.js"></script>
     <script src="js/service.js"></script>
-    <script src="js/myjs.js"></script>
     
     
   </head>
@@ -208,17 +207,17 @@
         </div>
         <div class="list row responsive-sm ">
         
-        <input type="hidden" ng-model="user.event_type" name="event_type" id="test_event_type">
-        <input type="hidden" ng-model="user.event_name" name="event_name" id="test_event_name">
-        <input type="hidden" ng-model="user.round" name="round" id="test_round">
-        <input type="hidden" ng-model="user.place" id="test_place">
-        <input type="hidden" ng-model="user.participant_type" id="test_participant_type">
-        <input type="hidden" ng-model="user.teamname" id="test_teamname">
-        <input type="hidden" ng-model="user.qr1" id="test_qr1">
-        <input type="hidden" ng-model="user.qr2" id="test_qr2">
-        <input type="hidden" ng-model="user.qr3" id="test_qr3">
-        <input type="hidden" ng-model="user.qr4" id="test_qr4">
-        <input type="hidden" ng-model="user.qr5" id="test_qr5">
+        <input type="text" ng-model="user.event_type" name="event_type" id="test_event_type">
+        <input type="text" ng-model="user.event_name" name="event_name" id="test_event_name">
+        <input type="text" ng-model="user.round" name="round" id="test_round">
+        <input type="text" ng-model="user.place" id="test_place">
+        <input type="text" ng-model="user.participant_type" id="test_participant_type">
+        <input type="text" ng-model="user.teamname" id="test_teamname">
+        <input type="text" ng-model="user.qr1" id="test_qr1">
+        <input type="text" ng-model="user.qr2" id="test_qr2">
+        <input type="text" ng-model="user.qr3" id="test_qr3">
+        <input type="text" ng-model="user.qr4" id="test_qr4">
+        <input type="text" ng-model="user.qr5" id="test_qr5">
         <br>
         <br>
         <input type="submit" ng-click="insert()" value="submit" class=" button icon-right ion-chevron-right button-calm" data-inline="true"/>
