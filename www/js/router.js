@@ -5,6 +5,14 @@ angular.module('kurukshetra')
 function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
+    .state('login', {
+      url: '/login',
+      templateUrl: '/login.html',
+      controller: 'Logincontrol'
+    });
+
+
+  $stateProvider
     .state('home', {
       url: '/home',
       templateUrl: '/home.html',
@@ -32,5 +40,5 @@ function($stateProvider, $urlRouterProvider) {
   controller: 'confirmcontrol'
   });
 
-  $urlRouterProvider.otherwise('home');
+  $urlRouterProvider.otherwise('login');
 }])
